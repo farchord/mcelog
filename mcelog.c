@@ -798,6 +798,12 @@ restart:
 					FIELD(addr);
 			}
 		}
+		else if (!strncmp(s, "PPIN", 4)) {
+			if ((n = sscanf(s, "PPIN %llx%n", &m.ppin, &next)) < 1)
+				missing++;
+			else
+				FIELD(ppin);
+		}
 		else if (!match_patterns(s, skip_patterns))
 			n = 0;
 		else { 
