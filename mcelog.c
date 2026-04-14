@@ -756,6 +756,12 @@ restart:
 			else
 				FIELD(socketid);
 		} 
+		else if (!strncmp(s, "SOCKET", 6)) {
+			if ((n = sscanf(s, "SOCKET %u%n", &m.socketid, &next)) != 1)
+				missing++;
+			else
+				FIELD(socketid);
+		}
 		else if (!strncmp(s, "CPUID", 5)) {
 			unsigned fam, mod;
 			char vendor[31];
