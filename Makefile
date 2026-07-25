@@ -64,8 +64,8 @@ else
 endif
 
 install-nodoc: mcelog mcelog.conf
-	mkdir -p $(DESTDIR)${etcprefix}/etc/mcelog $(DESTDIR)${prefix}/sbin
-	install -m 755 -p mcelog $(DESTDIR)${prefix}/sbin/mcelog
+	mkdir -p $(DESTDIR)${etcprefix}/etc/mcelog $(DESTDIR)${prefix}/bin
+	install -m 755 -p mcelog $(DESTDIR)${prefix}/bin/mcelog
 	install -m 644 -p -b mcelog.conf $(DESTDIR)${etcprefix}/etc/mcelog/mcelog.conf
 	for i in ${TRIGGERS} ; do 						\
 		install -m 755 -p -b triggers/$$i $(DESTDIR)${etcprefix}/etc/mcelog ; 	\
